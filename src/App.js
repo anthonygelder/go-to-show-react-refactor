@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
-import Main from './Main/Main'
-import Sidebar from './Sidebar/Sidebar'
+import Map from './Map/Map'
+import Search from './Search/Search'
+import Results from './Results/Results'
 import './App.css'
 
 
@@ -8,7 +9,6 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      game: ''
     }
   }
 
@@ -19,12 +19,13 @@ class App extends Component {
       <div>
         <header>
           <h1>
-            Twitch Game Search
+            Go To Show
           </h1>
+          <Search />
         </header>
         <main className='App'>
-          <Main />
-          <Sidebar />
+          <Results />
+          <Map />
         </main>
       </div>
     );
