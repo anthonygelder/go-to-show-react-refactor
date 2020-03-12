@@ -29,15 +29,31 @@ class Results extends Component {
             results = '';
         }
 
+        const concerts = this.props.shows.map(show => {
+            console.log(show)
+            return (<p key={show.id}>{show.id}</p>)
+            }
+        )
+        
+
         
         return (
-            <>
-                <div id="tableContainer">
-                    <table id="results">
-                        {results}
-                    </table>
-                </div> 
-            </>
+            <div id="tableContainer">
+                <table id="results">
+                    <tbody>
+                        <tr>
+                            <td align="left">Artist</td>
+                            <td align="left">Venue</td>
+                            <td align="left">Time</td>
+                            <td align="left">City</td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+                {concerts}
+            </div> 
         )
     }
 }
