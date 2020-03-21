@@ -83,7 +83,7 @@ handleSubmit(e) {
         </header>
         <main className='App'>
           <Results shows={this.state.results} />
-          <Map />
+          <Map shows={this.state}/>
         </main>
       </div>
     );

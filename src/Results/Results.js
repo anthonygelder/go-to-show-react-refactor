@@ -41,7 +41,7 @@ class Results extends Component {
 
 
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         // let results;
 
         // if (this.props.shows.length > 0) {
@@ -54,9 +54,9 @@ class Results extends Component {
             const city = show.location.city;
             const mapsUrl = 'https://www.google.com/maps/search/?api=1&query=' + this.urlStr(show.venue.displayName)
             
-            console.log(show)
+            // console.log(show)
             return (<tr key={show.id}>
-                        <td><a href={show.uri} rel="noopener noreferrer" target="_blank">{show.performance[0].displayName}</a></td>
+                        <td><a href={show.uri} rel="noopener noreferrer" target="_blank">{show.displayName}</a></td>
                         <td><a href={mapsUrl} rel="noopener noreferrer" target="_blank">{show.venue.displayName}</a></td>
                         <td valign="top">{this.convertTime(show.start.time)}</td>
                         <td>{city.substring(0, city.length - 8)}</td>

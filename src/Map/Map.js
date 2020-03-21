@@ -4,22 +4,35 @@ import './Map.css'
 
 
 class Map extends Component {
-    static defaultProps = {
-        center: {
-          lat: 59.95,
-          lng: 30.33
-        },
-        zoom: 11
-      };
+    constructor(props) {
+        super(props)
+        this.state = {
+            center: {
+                lat: 0 ,
+                lng: 0 
+              },
+              zoom: 11
+        }
+    }
+
+    componentDidMount() {
+        this.setState({
+            center: {
+                lat: this.props.shows.lat,
+                lng: this.props.shows.lng
+            }
+        })
+    }
     
     render() {
+        console.log(this.props)
         return (
         // Important! Always set the container height explicitly
         <div style={{ height: '100vh', width: '100%' }}>
             <GoogleMapReact
                 bootstrapURLKeys={{ key: 'AIzaSyCiv03ah7ZjCY_Nx6S6ZFnrX32ThZX6_-w' }}
-                defaultCenter={this.props.center}
-                defaultZoom={this.props.zoom}
+                defaultCenter={this.state.center}
+                defaultZoom={this.state.zoom}
                 >
                 {/* <AnyReactComponent
                     lat={59.955413}
